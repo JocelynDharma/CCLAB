@@ -1,12 +1,10 @@
 let leftX = 150;
 let rightX = 200;
-let sunRadius = 50;
 let jumpY = 0;
 
 function setup() {
     createCanvas(800, 500);
 }
-
 function draw() {
     //BACKGROUND: 
     // 1. Sunset Sky 
@@ -80,7 +78,7 @@ function draw() {
     fill(221, 229, 244);
 
     beginShape();
-    vertex(0, 370);
+    vertex(0, 370); //(https://p5js.org/reference/p5/vertex/)
     splineVertex(50, 360);
     splineVertex(100, 345);
     splineVertex(170, 315);
