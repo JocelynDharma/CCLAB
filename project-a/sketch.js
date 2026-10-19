@@ -3,9 +3,10 @@ let jumpY = 0;
 function setup() {
     createCanvas(800, 500);
 }
+
 function draw() {
-    //BACKGROUND: 
-    // 1. Sunset Sky 
+    //BACKGROUND:
+    // 1. Sunset Sky //(https://p5js.org/reference/p5/lerpColor/)
     let topColor = color(100, 140, 200);
     let middleColor = color(170, 145, 210);
     let pinkColor = color(220, 150, 200);
@@ -15,14 +16,15 @@ function draw() {
         let c;
 
         if (y < height * 0.25) {
-            c = lerpColor(topColor, middleColor,
-                map(y, 0, height * 0.25, 0, 1));
+            c = lerpColor(topColor, middleColor, map(y, 0, height * 0.25, 0, 1));
         } else if (y < height * 0.5) {
-            c = lerpColor(middleColor, pinkColor,
-                map(y, height * 0.25, height * 0.5, 0, 1));
+            c = lerpColor(
+                middleColor,
+                pinkColor,
+                map(y, height * 0.25, height * 0.5, 0, 1)
+            );
         } else {
-            c = lerpColor(pinkColor, bottomColor,
-                map(y, height * 0.5, height, 0, 1));
+            c = lerpColor(pinkColor, bottomColor, map(y, height * 0.5, height, 0, 1));
         }
 
         stroke(c);
@@ -34,9 +36,9 @@ function draw() {
     fill(255, 190, 120);
     circle(15, 15, 200);
 
-    //Cloud: 
+    //Cloud:
     //Cloud 1
-    push()
+    push();
     translate(sin(frameCount * 0.03) * 80, 0);
     noStroke();
     {
@@ -45,10 +47,10 @@ function draw() {
         circle(230, 100, 60);
         circle(260, 100, 50);
     }
-    pop()
+    pop();
 
     //Cloud 2
-    push()
+    push();
     translate(sin(frameCount * 0.02) * 300, 0);
     noStroke();
     {
@@ -57,9 +59,9 @@ function draw() {
         circle(400, 160, 35);
         circle(420, 160, 25);
     }
-    pop()
+    pop();
     //Cloud 3
-    push()
+    push();
     translate(-sin(frameCount * 0.015) * 200, 0);
     noStroke();
     {
@@ -68,8 +70,7 @@ function draw() {
         circle(400, 250, 90);
         circle(430, 250, 65);
     }
-    pop()
-
+    pop();
 
     //3. Mountain
     noStroke();
@@ -101,9 +102,10 @@ function draw() {
     vertex(300, 420);
     endShape(CLOSE);
 
-    // 
+    //
     // Tree 1: (https://editor.p5js.org/mathura/sketches/S1cljfdvl)
-    noStroke(); {
+    noStroke();
+    {
         fill(100, 65, 40);
         rect(95, 360, 12, 70);
         fill(50, 130, 70);
@@ -111,7 +113,7 @@ function draw() {
         ellipse(87, 360, 25, 25);
         ellipse(115, 360, 25, 25);
 
-        //Tree 2: 
+        //Tree 2:
         fill(100, 65, 40);
         rect(245, 360, 12, 70);
         fill(50, 130, 70);
@@ -136,7 +138,7 @@ function draw() {
         ellipse(620, 360, 25, 65);
     }
 
-    //4.ROAD 
+    //4.ROAD
     noStroke();
     fill(27, 35, 43);
     rect(0, 420, 800, 40);
@@ -177,10 +179,10 @@ function draw() {
     splineVertex(600, 500);
     endShape();
 
-    //   Bugsy: 
+    //   Bugsy:
     push();
-    if (key === ' ') { //https://www.google.com/url?sa=i&source=web&rct=j&url=https://stackoverflow.com/questions/70110785/how-can-i-make-my-stickfigure-jump-using-p5-js&ved=2ahUKEwiejrW9o8aXAxV2rVYBHQsFMisQ0YISegoIAggACAAICRAB&opi=89978449&cd&psig=AOvVaw1Qa3KZCf6mCr31ZymYrpQN&ust=1792506035742000
-        jumpY = +   100;
+    if (key === "") { // (https://www.google.com/url?sa=i&source=web&rct=j&url=https://stackoverflow.com/questions/70110785/how-can-i-make-my-stickfigure-jump-using-p5-js&ved=2ahUKEwiejrW9o8aXAxV2rVYBHQsFMisQ0YISegoIAggACAAICRAB&opi=89978449&cd&psig=AOvVaw1Qa3KZCf6mCr31ZymYrpQN&ust=1792506035742000)
+        jumpY = +100;
     } else {
         jumpY = 0;
     }
@@ -200,7 +202,7 @@ function draw() {
     rotate(radians(-2));
     scale(wingScale, 1);
     translate(-350, -375);
-    fill(70, 162, 218)
+    fill(70, 162, 218);
     beginShape();
     splineVertex(360, 350);
     splineVertex(315, 340);
@@ -214,13 +216,13 @@ function draw() {
     endShape();
     pop();
 
-    // R wing 
+    // R wing
     push();
     translate(450, 375);
     rotate(radians(-2));
     scale(wingScale, 1);
     translate(-450, -375);
-    fill(70, 162, 218)
+    fill(70, 162, 218);
     beginShape();
     splineVertex(437, 350);
     splineVertex(485, 340);
@@ -254,7 +256,7 @@ function draw() {
     circle(383, 378, 2);
     circle(423, 378, 3);
 
-    // Mouth 
+    // Mouth
     stroke(0);
     strokeWeight(2);
     fill(240, 160, 170);
