@@ -179,7 +179,7 @@ function draw() {
 
     //   Bugsy: 
     push();
-    if (key === '') {
+    if (key === ' ') { //https://www.google.com/url?sa=i&source=web&rct=j&url=https://stackoverflow.com/questions/70110785/how-can-i-make-my-stickfigure-jump-using-p5-js&ved=2ahUKEwiejrW9o8aXAxV2rVYBHQsFMisQ0YISegoIAggACAAICRAB&opi=89978449&cd&psig=AOvVaw1Qa3KZCf6mCr31ZymYrpQN&ust=1792506035742000
         jumpY = +   100;
     } else {
         jumpY = 0;
