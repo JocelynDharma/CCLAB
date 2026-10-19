@@ -1,5 +1,3 @@
-let leftX = 150;
-let rightX = 200;
 let jumpY = 0;
 
 function setup() {
