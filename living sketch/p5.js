@@ -1,4 +1,4 @@
-/*! p5.js v2.3.3 September 7, 2026 */
+/*! p5.js v2.3.4 September 25, 2026 */
 var p5 = (function () {
   'use strict';
 
@@ -15,7 +15,7 @@ var p5 = (function () {
    * @property {String} VERSION
    * @final
    */
-  const VERSION = '2.3.3';
+  const VERSION = '2.3.4';
 
   // GRAPHICS RENDERER
   /**
@@ -38949,13 +38949,13 @@ var p5 = (function () {
             fn.saveJSON(args[0], args[1], args[2]);
             return;
           case 'txt':
-            fn.saveStrings(args[0], args[1], args[2]);
+            fn.saveStrings(args[0], args[1], 'txt', args[2]);
             return;
           // =================================================
           // OPTION 3: decide based on object...
           default:
             if (args[0] instanceof Array) {
-              fn.saveStrings(args[0], args[1], args[2]);
+              fn.saveStrings(args[0], args[1], undefined, args[2]);
             } else if (args[0] instanceof p5.Table) {
               fn.saveTable(args[0], args[1], args[2]);
             } else if (args[0] instanceof p5.Image) {
@@ -81436,7 +81436,7 @@ var p5 = (function () {
         const fnNames = entryPoints;
 
         if (context.preload && !p5.isPreloadSupported()) {
-          p5._error(context, translator('fes.preloadDisabled'));
+          p5._error(p5.instance, translator('fes.preloadDisabled'));
         }
 
         const fxns = {};
@@ -82076,7 +82076,7 @@ var p5 = (function () {
       p5._fesLogCache = {};
 
       lifecycles.presetup = function () {
-        window.addEventListener('load', checkForUserDefinedFunctions, false);
+        checkForUserDefinedFunctions(window);
         window.addEventListener('error', p5._fesErrorMonitor, false);
         window.addEventListener('unhandledrejection', p5._fesErrorMonitor, false);
       };
