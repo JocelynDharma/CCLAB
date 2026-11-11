@@ -37,8 +37,7 @@ class AspenDancer {
     this.y = startY;
     // add properties for your dancer here:
     //..
-    //..
-    //..
+    //.
   }
   update() {
     // update properties here to achieve
@@ -70,7 +69,7 @@ class AspenDancer {
     rect(-18, -4, 15, 40);
     pop();
 
-    // RIGHT LEG
+    //RIGHT LEG
     push();
     translate(9, 32);
     rotate(-legSwing);
@@ -78,18 +77,18 @@ class AspenDancer {
     rect(0, -4, 18, 40);
     pop();
 
-    // BODY
+    //BODY
     fill(40, 100, 230);
     rect(-20, -10, 40, 42);
 
-    // LEFT ARM
+    //LEFT ARM
     push();
     translate(-20, -10);
     rotate(-armSwing);
     fill(255, 220, 80);
     rect(-18, 0, 18, 42);
     pop();
-    // RIGHT ARM
+    //RIGHT ARM
     push();
     translate(20, -10);
     rotate(armSwing);
@@ -97,7 +96,7 @@ class AspenDancer {
     rect(0, 0, 18, 42);
     pop();
 
-    // HEAD
+    //HEAD
     push();
     translate(0, -27);
     rotate(headTilt);
@@ -105,14 +104,14 @@ class AspenDancer {
     rect(-20, -21, 40, 35);
     pop();
 
-    // LEFT EYE
+    //LEFT EYE
     fill(0);
     ellipse(-9, -34, 4, 4);
 
     // RIGHT EYE
     ellipse(9, -34, 4, 4);
 
-    // SMILE
+    //SMILE
     noFill();
     stroke(0);
     strokeWeight(2);
